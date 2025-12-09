@@ -8,7 +8,7 @@ const Results = () => {
     const { score, totalQuestions } = location.state || { score: 0, totalQuestions: 10 };
 
     const percentage = Math.round((score / totalQuestions) * 100);
-    const feedbackText = percentage >= 70 
+    const feedbackText = percentage >= 60 
         ? "Parabéns! Excelente domínio do conteúdo de Gestão do Relacionamento com Cliente."
         : "Recomendamos revisar alguns tópicos para um melhor desempenho.";
 
