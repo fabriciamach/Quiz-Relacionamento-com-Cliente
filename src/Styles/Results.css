@@ -1,0 +1,112 @@
+/* Paleta de Cores (Deve ser lida do seu arquivo global se possível) */
+:root {
+    --primary-dark: #000000;
+    --highlight-red: #A92C3F;
+    --text-on-dark: #ffffff;
+    --card-bg-color: #ffffff;
+    --text-dark: #1e1e1e;
+    --font-DM: "DM Serif Text", serif; 
+    --font-Nunito: "Nunito", sans-serif; 
+}
+
+.results-page {
+    min-height: 100vh;
+    background-color: var(--primary-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.results-card {
+    background-color: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.results-title {
+    font-family: var(--font-DM);
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.results-feedback {
+    font-family: var(--font-Nunito);
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.score-display {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.score-label {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.score-value {
+    font-family: var(--font-DM);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--highlight-red);
+    line-height: 1;
+}
+
+.percentage-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: 10px;
+}
+
+.home-button {
+    background-color: var(--highlight-red);
+    color: var(--text-on-dark);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    width: 90%;
+    transition: background-color 0.2s;
+}
+
+.home-button:hover {
+    background-color: #832432;
+}
+
+@media (max-width: 480px) {
+    
+    .results-card {
+        padding: 25px 20px; 
+        border-radius: 8px; 
+    }
+
+    .results-title {
+        font-size: 2rem;
+    }
+
+    .score-value {
+        font-size: 2.5rem; 
+    }
+    
+    .results-page {
+        padding: 10px; 
+    }
+
+    .home-button {
+        width: 80%;
+    }
+}

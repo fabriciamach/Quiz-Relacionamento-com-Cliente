@@ -1,0 +1,210 @@
+/* Variáveis de cor e fonte */
+:root {
+  
+    --primary-dark: #2a2828; 
+    --highlight-red: #A92C3F;
+    --text-on-dark: #ffffff; 
+    --text-on-light: #1e1e1e; 
+    --card-bg-color: #ffffff; 
+    
+    /* Fontes */
+    --font-DM: "DM Serif Text", serif; 
+    --font-Nunito: "Nunito", sans-serif; 
+}
+
+/* --- Layout Principal --- */
+
+.question-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    min-height: 100vh;
+    padding: 50px 20px;
+    background-color: var(--primary-dark);
+    text-align: center;
+    font-family: var(--font-Nunito); 
+    position: relative; 
+}
+
+/* --- Botão Voltar/Sair --- */
+
+.back-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: var(--text-on-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+    z-index: 20; 
+}
+
+.back-button:hover {
+    color: var(--highlight-red); 
+}
+
+
+
+.progress-text {
+ 
+    color: var(--highlight-red); 
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    margin-bottom: 50px; 
+    text-transform: uppercase;
+    font-family: var(--font-Nunito);
+}
+
+/* --- Área da Pergunta --- */
+
+.question-area {
+    width: 100%;
+    max-width: 950px; 
+    margin-bottom: 40px;
+}
+
+.question-text {
+    font-family: var(--font-DM); 
+    font-size: 3rem; 
+    font-weight: 700;
+    color: var(--text-on-dark); 
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* --- Container de Respostas  --- */
+
+.answers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px; 
+    margin-bottom: 40px;
+}
+
+.answer-card {
+    flex: 1 1 200px; 
+    
+    background-color: var(--card-bg-color);
+    color: var(--text-on-light); 
+    padding: 30px 20px; 
+    
+    border: 2px solid var(--text-on-light); 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); 
+    
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.answer-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+    color: var(--highlight-red); 
+    border: 2px solid var(--highlight-red); 
+}
+
+/* --- Botão Enviar/Próximo --- */
+
+.submit-button {
+    background-color: var(--highlight-red);
+    color: white;
+    padding: 18px 60px; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    background-color: #832432; 
+}
+
+/* --- Responsividade --- */
+
+@media (max-width: 992px) {
+    .answers-container {
+        gap: 15px;
+    }
+    .answer-card {
+        flex: 1 1 45%; 
+    }
+}
+
+@media (max-width: 768px) {
+    .question-page {
+        padding: 20px 10px;
+    }
+    
+    .back-button {
+        top: 20px;
+        left: 15px;
+    }
+
+    .question-text {
+        font-size: 2rem;
+    }
+
+    .answers-container {
+        flex-direction: column; 
+        gap: 12px;
+    }
+    
+    .answer-card {
+        flex: 1 1 100%; 
+        padding: 25px 15px;
+    }
+}
+
+/* --- Timer e Progresso --- */
+
+.progress-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 950px;
+    margin-bottom: 30px;
+}
+
+.timer-display {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--highlight-red); 
+    border: 2px solid var(--highlight-red);
+    padding: 5px 15px;
+    border-radius: 5px;
+    min-width: 100px;
+    text-align: center;
+    background-color: var(--card-bg-color); 
+}
+
+.progress-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-on-dark);
+    padding: 5px 15px;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    .progress-bar-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
